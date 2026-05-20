@@ -1,0 +1,39 @@
+[project]
+name = "local-rag-assistant"
+version = "0.1.0"
+description = "Interview-ready local RAG project over TXT/PDF documents."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "langchain>=1.2.15",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.3.1",
+    "numpy>=2.2.0",
+    "pymupdf>=1.27.2.2",
+    "pypdf>=6.10.2",
+    "scikit-learn>=1.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-cov>=6.0.0",
+]
+
+[project.scripts]
+local-rag-assistant = "local_rag_assistant.cli:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
