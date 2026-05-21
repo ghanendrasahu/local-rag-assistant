@@ -1,11 +1,12 @@
-# Local RAG Assistant: Interview-Ready Project
+# Local RAG Assistant
 
-Local RAG Assistant is a production-style Retrieval-Augmented Generation (RAG) starter project that answers questions over local `.txt` and `.pdf` files.
+This project is a local Retrieval-Augmented Generation (RAG) pipeline for answering questions over `.txt` and `.pdf` files.
 
-It is built to be:
-- Easy to demo in interviews
-- Easy to extend into advanced RAG patterns
-- Fully local for ingestion, chunking, indexing, and retrieval
+It focuses on a simple and practical flow:
+- Ingest local documents
+- Split them into overlapping chunks
+- Build a TF-IDF retrieval index
+- Query top matches with a CLI
 
 ## What This Project Includes
 
@@ -74,15 +75,11 @@ Useful flags:
 python -m pytest
 ```
 
-## Interview Talking Points
+## Why This Approach
 
 - Why chunk overlap improves recall near boundaries.
 - Why TF-IDF is a strong baseline before moving to embeddings/vector DB.
 - How to measure retrieval quality (recall@k, MRR, answer groundedness).
-- How to productionize next:
-  - Add dense embeddings and vector store (FAISS/Chroma).
-  - Add LLM answer synthesis with citation enforcement.
-  - Add evaluation harness and regression tests for RAG quality.
 
 ## Roadmap
 
