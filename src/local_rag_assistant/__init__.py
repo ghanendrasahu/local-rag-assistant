@@ -2,4 +2,4 @@
 
 from local_rag_assistant.pipeline import ask_question, build_index
 
-__all__ = ["build_index", "ask_question"]
+__all__ = ["ask_question", "build_index"]

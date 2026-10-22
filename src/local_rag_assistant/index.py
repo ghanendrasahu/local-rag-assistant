@@ -28,7 +28,7 @@ class TfidfIndex:
         self.chunks = chunks
 
     @classmethod
-    def build(cls, chunks: list[Chunk]) -> "TfidfIndex":
+    def build(cls, chunks: list[Chunk]) -> TfidfIndex:
         if not chunks:
             raise ValueError("Cannot build index with zero chunks.")
         vectorizer = TfidfVectorizer(ngram_range=(1, 2), stop_words="english")
@@ -62,7 +62,7 @@ class TfidfIndex:
         path.write_bytes(pickle.dumps(payload))
 
     @classmethod
-    def load(cls, path: Path) -> "TfidfIndex":
+    def load(cls, path: Path) -> TfidfIndex:
         payload = pickle.loads(path.read_bytes())
         return cls(
             vectorizer=payload["vectorizer"],
